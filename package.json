@@ -1,0 +1,30 @@
+{
+  "name": "qs-stringify",
+  "description": "Simple query stringify with nesting.",
+  "version": "0.0.0",
+  "author": "Renée Kooi <renee@kooi.me>",
+  "bugs": {
+    "url": "https://github.com/goto-bus-stop/qs-stringify/issues"
+  },
+  "devDependencies": {
+    "standard": "*",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.0"
+  },
+  "homepage": "https://github.com/goto-bus-stop/qs-stringify",
+  "keywords": [
+    "format",
+    "qs",
+    "querystring",
+    "stringify"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goto-bus-stop/qs-stringify.git"
+  },
+  "scripts": {
+    "test": "standard && tape test/*.js | tap-spec"
+  }
+}
