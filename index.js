@@ -1,11 +1,3 @@
-function encode (key) {
-  return encodeURIComponent(key)
-}
-
-function nest (current, key) {
-  return current + '[' + encode(key) + ']'
-}
-
 module.exports = function queryStringify (obj, prefix) {
   var pairs = []
   for (var key in obj) {
@@ -14,13 +6,12 @@ module.exports = function queryStringify (obj, prefix) {
     }
 
     var value = obj[key]
+    var enkey = encodeURIComponent(key)
     var pair
     if (typeof value === 'object') {
-      pair = queryStringify(value, prefix ? nest(prefix, key) : encode(key))
-    } else if (prefix) {
-      pair = nest(prefix, key) + '=' + encode(value)
+      pair = queryStringify(value, prefix ? prefix + '[' + enkey + ']' : enkey)
     } else {
-      pair = encode(key) + '=' + encode(value)
+      pair = (prefix ? prefix + '[' + enkey + ']' : enkey) + '=' + encodeURIComponent(value)
     }
     pairs.push(pair)
   }
