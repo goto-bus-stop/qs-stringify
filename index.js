@@ -1,3 +1,11 @@
+/**
+ * Stringify an object for use in a query string.
+ *
+ * @param {Object} obj - The object.
+ * @param {string} prefix - When nesting, the parent key.
+ *     keys in `obj` will be stringified as `prefix[key]`.
+ */
+
 module.exports = function queryStringify (obj, prefix) {
   var pairs = []
   for (var key in obj) {
