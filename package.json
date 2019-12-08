@@ -1,7 +1,7 @@
 {
   "name": "qs-stringify",
   "description": "Simple query stringify with nesting.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Renée Kooi <renee@kooi.me>",
   "bugs": {
     "url": "https://github.com/goto-bus-stop/qs-stringify/issues"
