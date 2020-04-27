@@ -9,7 +9,7 @@
   "devDependencies": {
     "standard": "^14.3.1",
     "tap-spec": "^5.0.0",
-    "tape": "^4.9.2"
+    "tape": "^5.0.0"
   },
   "homepage": "https://github.com/goto-bus-stop/qs-stringify",
   "keywords": [
