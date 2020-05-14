@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+# 1.2.1 / 14 May 2020
+
+ * Fix return type in typescript definition file.
+
 # 1.2.0 / 08 Dec 2019
 
  * Add typescript definition.
