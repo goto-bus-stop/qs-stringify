@@ -6,6 +6,7 @@ var has = Object.prototype.hasOwnProperty
  * @param {Object} obj - The object.
  * @param {string} prefix - When nesting, the parent key.
  *     keys in `obj` will be stringified as `prefix[key]`.
+ * @returns {string}
  */
 
 module.exports = function queryStringify (obj, prefix) {

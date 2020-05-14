@@ -9,6 +9,6 @@ type StringifiableObject = { [name: string]: StringifiableValue | undefined }
  * @param {string} prefix - When nesting, the parent key.
  *     keys in `obj` will be stringified as `prefix[key]`.
  */
-declare function queryStringify (obj: StringifiableObject, prefix?: string)
+declare function queryStringify (obj: StringifiableObject, prefix?: string): string
 
 export = queryStringify
