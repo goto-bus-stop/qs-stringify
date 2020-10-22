@@ -7,7 +7,7 @@
     "url": "https://github.com/goto-bus-stop/qs-stringify/issues"
   },
   "devDependencies": {
-    "standard": "^14.3.1",
+    "standard": "^15.0.0",
     "tap-spec": "^5.0.0",
     "tape": "^5.0.0"
   },
