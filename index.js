@@ -1,3 +1,6 @@
+/* eslint-disable no-var */
+'use strict'
+
 var has = Object.prototype.hasOwnProperty
 
 /**
