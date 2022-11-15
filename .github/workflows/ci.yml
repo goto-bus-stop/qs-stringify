@@ -8,25 +8,25 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [4.x, 6.x, 8.x, 9.x, 10.x, 11.x, 12.x]
+        node-version: [4.x, 6.x, 8.x, 9.x, 10.x, 12.x, 14.x, 16.x, 18.x, 19.x]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: npm test
+    - run: npm run tests-only
 
   lint:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Linting
-      uses: goto-bus-stop/standard-action@v1
+    - uses: actions/checkout@v3
+    - name: Use Node.js
+      uses: actions/setup-node@v3
       with:
-        annotate: true
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        node-version: lts/*
+    - run: npm install
+    - run: npm run lint
