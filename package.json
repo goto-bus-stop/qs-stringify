@@ -3,12 +3,20 @@
   "description": "Simple query stringify with nesting.",
   "version": "1.2.1",
   "author": "Renée Kooi <renee@kooi.me>",
+  "files": [
+    "lib/**/*.js",
+    "!lib/test"
+  ],
   "bugs": {
     "url": "https://github.com/goto-bus-stop/qs-stringify/issues"
   },
   "devDependencies": {
-    "standard": "^17.0.0",
-    "tape": "^5.0.0"
+    "@types/node": "^20.11.8",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
   },
   "homepage": "https://github.com/goto-bus-stop/qs-stringify",
   "keywords": [
@@ -18,14 +26,17 @@
     "stringify"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/goto-bus-stop/qs-stringify.git"
   },
   "scripts": {
-    "lint": "standard",
-    "tests-only": "node test",
-    "test": "npm run lint && npm run tests-only"
+    "lint": "npm run lint:js && npm run format:check",
+    "lint:js": "eslint \"src/**/*.ts\"",
+    "build": "tsc",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "test": "node --test \"lib/test/**/*_test.js\""
   }
 }
