@@ -2,6 +2,8 @@
 
 Simple query stringify with nesting.
 
+This version differs from the parent repo in that `undefined` values are not included in the output.
+
 [![npm][npm-image]][npm-url]
 [![github][github-image]][github-url]
 [![standard][standard-image]][standard-url]
@@ -29,7 +31,8 @@ stringify({
     offset: 50,
     limit: 25
   },
-  filter: 'hello world'
+  filter: 'hello world',
+  other: undefined
 })
 // → "page[offset]=50&page[limit]=25&filter=hello%20world"
 ```

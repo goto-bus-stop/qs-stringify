@@ -20,6 +20,11 @@ module.exports = function queryStringify (obj, prefix) {
     }
 
     var value = obj[key]
+
+    if (typeof value === 'undefined') {
+      continue
+    }
+
     var enkey = encodeURIComponent(key)
     var pair
     if (typeof value === 'object') {
