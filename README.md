@@ -34,6 +34,22 @@ stringify({
 // → "page[offset]=50&page[limit]=25&filter=hello%20world"
 ```
 
+This module expects that you know the shape of the query string you want to print, and only does trivial serialization of strings, numbers, and nested objects.
+If you want to use other types or do custom serialization, fit them into a supported shape first:
+
+```js
+var stringify = require('qs-stringify')
+
+var startAt = new Date()
+var filterTags = ['work', 'home']
+
+stringify({
+  tags: filterTags.join(','),
+  startAt: startAt.toISOString(),
+})
+// → "tags=work,home&startAt=2024-10-15T20%3A22%3A36.883Z"
+```
+
 ## License
 
 [MIT](LICENSE.md)
