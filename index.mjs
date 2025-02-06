@@ -1,6 +1,3 @@
-/* eslint-disable no-var */
-'use strict'
-
 var has = Object.prototype.hasOwnProperty
 
 /**
@@ -12,9 +9,9 @@ var has = Object.prototype.hasOwnProperty
  * @returns {string}
  */
 
-// Mirror any changes made in index.mjs and index.d.ts!
+// Mirror any changes made in index.js and index.d.ts!
 
-module.exports = function queryStringify (obj, prefix) {
+export default function queryStringify (obj, prefix) {
   var pairs = []
   for (var key in obj) {
     if (!has.call(obj, key)) {

@@ -29,3 +29,13 @@ test('stringify', function (t) {
   }), 'object[xyz]=hello&array[0]=0&array[1]=1&array[2]=2', 'should encode arrays')
   t.end()
 })
+
+var supportsModules = false
+try {
+  Function('return import("any-module")') // eslint-disable-line no-new-func
+  supportsModules = true
+} catch (_err) {}
+
+if (supportsModules) {
+  require('./module')
+}
