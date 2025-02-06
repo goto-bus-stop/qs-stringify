@@ -34,6 +34,10 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
+    - name: nvm install-latest-npm
+      run: |
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+        nvm install-latest-npm
     - run: npm install
     - run: npm run tests-only
 
@@ -46,5 +50,9 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: lts/*
+    - name: nvm install-latest-npm
+      run: |
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+        nvm install-latest-npm
     - run: npm install
     - run: npm run lint
