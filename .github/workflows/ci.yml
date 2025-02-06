@@ -37,6 +37,7 @@ jobs:
     - name: nvm install-latest-npm
       run: |
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+        [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
         nvm install-latest-npm
     - run: npm install
     - run: npm run tests-only
@@ -53,6 +54,7 @@ jobs:
     - name: nvm install-latest-npm
       run: |
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+        [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
         nvm install-latest-npm
     - run: npm install
     - run: npm run lint
