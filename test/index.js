@@ -2,6 +2,7 @@
 'use strict'
 
 var test = require('tape')
+var hasDynamicImport = require('has-dynamic-import')
 var stringify = require('../')
 
 test('stringify', function (t) {
@@ -30,12 +31,8 @@ test('stringify', function (t) {
   t.end()
 })
 
-var supportsModules = false
-try {
-  Function('return import("any-module")') // eslint-disable-line no-new-func
-  supportsModules = true
-} catch (_err) {}
-
-if (supportsModules) {
-  require('./module')
-}
+hasDynamicImport().then(function (supportsModules) {
+  if (supportsModules) {
+    require('./module')
+  }
+})
