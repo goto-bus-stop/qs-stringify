@@ -2,6 +2,7 @@
 'use strict'
 
 var test = require('tape')
+var hasDynamicImport = require('has-dynamic-import')
 var stringify = require('../')
 
 test('stringify', function (t) {
@@ -28,4 +29,10 @@ test('stringify', function (t) {
     array: [0, 1, 2]
   }), 'object[xyz]=hello&array[0]=0&array[1]=1&array[2]=2', 'should encode arrays')
   t.end()
+})
+
+hasDynamicImport().then(function (supportsModules) {
+  if (supportsModules) {
+    require('./module')
+  }
 })
