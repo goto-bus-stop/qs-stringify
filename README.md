@@ -15,7 +15,7 @@ Simple query stringify with nesting.
 
 ## Install
 
-```
+```bash
 npm install qs-stringify
 ```
 
@@ -34,7 +34,19 @@ stringify({
 // → "page[offset]=50&page[limit]=25&filter=hello%20world"
 ```
 
+You can also use ES modules.
+
+```js
+import stringify from 'qs-stringify'
+```
+
+## Query string shape
+
 This module expects that you know the shape of the query string you want to print, and only does trivial serialization of strings, numbers, and nested objects.
+
+This is very much intentional: a query string is part of a URL, and should be stable and intentional.
+You should not blindly serialize state objects into a query string, and URLs should continue to work if your state shape changes.
+
 If you want to use other types or do custom serialization, fit them into a supported shape first:
 
 ```js
