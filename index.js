@@ -17,7 +17,7 @@ var has = Object.prototype.hasOwnProperty
 module.exports = function queryStringify (obj, prefix) {
   var pairs = []
   for (var key in obj) {
-    if (!has.call(obj, key)) {
+    if (!has.call(obj, key) || obj[key] == null) {
       continue
     }
 

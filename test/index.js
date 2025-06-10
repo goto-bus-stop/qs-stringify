@@ -28,6 +28,13 @@ test('stringify', function (t) {
     },
     array: [0, 1, 2]
   }), 'object[xyz]=hello&array[0]=0&array[1]=1&array[2]=2', 'should encode arrays')
+
+  t.is(stringify({
+    omit: undefined,
+    omit2: null,
+    keep: true
+  }), 'keep=true', 'should omit null and undefined')
+
   t.end()
 })
 
